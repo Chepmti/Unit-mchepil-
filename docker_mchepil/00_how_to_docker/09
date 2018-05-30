@@ -1,0 +1,12 @@
+docker pull debian
+docker run -it debian /bin/sh
+
+apt-get update -y
+apt-get upgrade -y
+apt-get install gcc -y
+apt-get install vim -y
+apt-get install git -y
+
+#git config --global user.name "Chepmti"
+#git config --global user.email johndoe@example.com
+#git config --list

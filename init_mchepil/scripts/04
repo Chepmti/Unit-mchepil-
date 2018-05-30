@@ -1,0 +1,5 @@
+echo “0 0 * * * V1=\“\$(md5sum /etc/crontab | awk {' print \$1'})\” && V2=\“\$(cat /etc/crontab.log 2>dev/null)\” && \ 
+if [ ‘\$V1’ != ‘\$V2’] then md5sum /etc/crontab | awk ‘{ print $1 }’ > /etc/crontab.log && echo \“/etc/crontab was 
+modified\” | mail -s \“/etc/crontab was modified\” root ; fi” >> script_file
+crontab script_file
+crontab -l
